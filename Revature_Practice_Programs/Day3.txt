@@ -1,0 +1,46 @@
+s=input()
+print(s[::-1])
+============================
+text = input("Enter a string: ")
+reversed_text = text[::-1]
+print("Reversed string:"+reversed_text)
+======================================
+s = input()
+i = 0
+while i < len(s):
+    count = 1
+    while i + 1 < len(s) and s[i] == s[i + 1]:
+        count += 1
+        i += 1
+    print(f"({count}, {s[i]})", end=' ')
+    i += 1
+==================================
+
+s="Robert000Smith000123"
+s1=list(s.split('000') )
+s2=['firstname','lastname','id']
+print(dict(zip(s2,s1)))
+
+================
+def rmv_extra(s,s1):
+    for i in s1:
+        if i not in s:
+            return i
+s="eueiieo"
+s1="iieoedue"
+print(rmv_extra(s,s1))
+===================
+s="his friends"#'they are round'
+s1="our company"#'fold two times'
+def shadowword(s,s1):
+    f1=s.split(' ')
+    f2=s1.split(' ')
+    if len(f1)!=len(f2):
+        return False
+    for w1,w2 in zip(f1,f2):
+        if (set(w1)&set(w2)):
+            return False
+        if len(w1)!=len(w2):
+            return False
+    return True
+print(shadowword(s,s1))
